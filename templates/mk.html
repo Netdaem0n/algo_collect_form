@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <title> {{ p_title }}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+<h2>Запись на мастер-класс</h2>
+<form class="contact-form" action="{{ url_for('add_mk') }}" method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.fam_child.label }} {{ form.fam_child(size=32) }}
+    </div>
+    <div>
+        {{ form.name_child.label }} {{ form.name_child(size=32) }}
+    </div>
+    <div>
+        {{ form.otch_child.label }} {{ form.otch_child(size=32) }}
+    </div>
+    <div>
+        {{ form.date_birth.label }} <input type="date" name="date_birth" required>
+    </div>
+    <div>
+        {{ form.name_parent.label }} {{ form.name_parent(size=32) }}
+    </div>
+    <div>
+        {{ form.phone_parent.label }} {{ form.phone_parent(size=32) }}
+    </div>
+    <div>
+        {{ form.tg_account.label }} {{ form.tg_account(size=32) }}
+    </div>
+
+    <div>
+        {{ form.mk_day.label }} {{ form.mk_day() }}
+    </div>
+
+    <div>
+        {{ form.mk_time.label }} {{ form.mk_time() }}
+    </div>
+
+    <div>
+        {{ form.mk_name.label }} {{ form.mk_name() }}
+    </div>
+
+    <div>
+        <input type="submit" value="Отправить заявку">
+    </div>
+    <div>
+        <p>
+            При отправке данных вы соглашаетесь с нашей <a href="https://sakhalinsk.algoritmika.org/ru/privacy" target="_blank">политикой конфиденциальности</a>
+        </p>
+    </div>
+</form>
+</div>
+
+{% endblock %}

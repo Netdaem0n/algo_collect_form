@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='anim.js') }}"></script>
+</head>
+<body>
+
+<nav>
+    <ul class="menu">
+    <li><a href="{{ url_for('home_main') }}">Главная</a></li>
+    <li><a href="{{ url_for('add_mk') }}">Записаться на Мастер Класс</a></li>
+    <li><a href="{{ url_for('kontakti') }}">Связаться с нами</a></li>
+    {% if request.cookies.get('UUID') %}<li><a href="{{ url_for('special_page') }}">Просмотреть заявки на Мастер-Класс</a></li>{% endif %}
+    <li><a href="{{ url_for('about') }}">О нас</a></li>
+    </ul>
+</nav>
+
+
+<div>{% block content %}  {% endblock %}</div>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+/* Устанавливаем базовые стили для body */
+body {
+    /* Задаем градиентный фон */
+    background: linear-gradient(to right, #310068, #7c6c8a);
+
+    /* Обеспечиваем, чтобы фон занимал всю высоту страницы */
+    height: 100vh; /* Высота вьюпорта */
+
+    /* Убираем отступы (padding и margin) */
+    margin: 0;
+    padding: 0;
+
+    /* Устанавливаем шрифт для текста, если нужно */
+    font-family: Arial, sans-serif;
+    color: white; /* Цвет текста */
+
+}
+
+/* Дополнительные стили для текста */
+h1 {
+    font-size: 3rem; /* Размер заголовка */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Стили для навигации */
+nav {
+    /* Центрирование содержимого */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для списка меню */
+.menu {
+    font-size: 1.4rem;
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Flexbox для горизонтального расположения */
+    gap: 30px; /* Промежуток между элементами меню */
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center the menu items */
+        gap: 30px; /* Reduce the gap between items */
+    }
+
+    .menu a {
+        padding: 15px 30px; /* Increase padding for better touch targets */
+        font-size: 1.2rem; /* Increase font size for readability */
+    }
+}
+
+/* Стили для элементов списка */
+.menu li {
+    display: inline; /* Отображение как строчные элементы */
+}
+
+/* Стили для ссылок */
+.menu a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: white; /* Цвет текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    border-radius: 5px; /* Закругленные углы */
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход для эффектов */
+}
+
+/* Эффект при наведении на ссылку */
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Изменяем фон при наведении */
+    transform: scale(1.05); /* Увеличиваем размер элемента при наведении */
+}
+
+.text-container {
+    border: 5px solid burlywood;
+    border-radius: 50px 20px 50px 20px;
+    margin-top: 20px; /* Отступ сверху для отделения текста от меню */
+    font-size: 24px;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 600px; /* Set minimum width */
+    max-width: 80%;
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    word-wrap: break-word; /* Allow long words to be broken and wrap to the next line */
+    word-break: break-all; /* Break words at arbitrary points to prevent overflow */
+}
+
+
+.text-container p:hover {
+    color: black;
+    transform: scale(1.01); /* Увеличиваем размер элемента при наведении */
+}
+
+.text-container-info {
+    font-size: 24px;
+    border: 5px solid burlywood;
+    border-radius: 50px 20px 50px 20px;
+    margin-top: 20px; /* Отступ сверху для отделения текста от меню */
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 600px; /* Set minimum width */
+    max-width: 80%;
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    word-wrap: break-word; /* Allow long words to be broken and wrap to the next line */
+    word-break: break-all; /* Break words at arbitrary points to prevent overflow */
+}
+
+.text-container-info h1 {
+    padding-top: 10px;
+    font-size: 2rem; /* Размер заголовка */
+    margin: 0; /* Убираем отступы */
+}
+
+.text-container-info p {
+    font-size: 24px; /* Размер заголовка */
+    margin-top: 5px; /* Убираем отступы */
+    margin-left: 30px;
+    margin-right: unset;
+    text-align: left;
+}
+
+/* Стили для контейнера формы */
+.form-container {
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    background: linear-gradient(to left, #310068, #7c6c8a);
+    border-radius: 10px; /* Закругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    max-width: 800px; /* Максимальная ширина формы */
+    width: 100%; /* Ширина 100% от родителя */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Стили для заголовка формы */
+.contact-form h2 {
+    text-align: center; /* Выравнивание заголовка по центру */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для элементов формы */
+.contact-form label {
+    display: block; /* Элементы меток на новой строке */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+.contact-form p a {
+    display: inline-block; /* Элементы меток на новой строке */
+    margin-bottom: 15px; /* Отступ снизу */
+    color: #121111;
+    font-size: 24px;
+}
+
+.contact-form p {
+    display: inline-block; /* Элементы меток на новой строке */
+    margin-bottom: 15px; /* Отступ снизу */
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.contact-form input, .contact-form textarea, .contact-form select {
+    width: 80%; /* Ширина 100% от родителя */
+    padding: 10px; /* Внутренние отступы */
+    margin-bottom: 15px; /* Отступ снизу */
+    border: 1px solid #ccc; /* Рамка */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    transition: border-color 0.3s; /* Плавный переход для рамки */
+}
+
+/* Эффект при фокусировке на элементах формы */
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+    border-color: #ff7e5f; /* Цвет рамки при фокусировке */
+    outline: none; /* Убираем стандартное обрамление */
+}
+
+/* Стили для кнопки */
+.contact-form button {
+    width: 100%; /* Ширина 100% от родителя */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #ff7e5f; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход для фона */
+}
+
+/* Эффект при наведении на кнопку */
+.contact-form button:hover {
+    background-color: #feb47b; /* Цвет фона кнопки при наведении */
+}
+
+.table-container {
+    min-width: 600px; /* Set minimum width */
+    max-width: 80%;
+    margin: auto; /* Центрируем контейнер */
+    background-color: #a59a9a; /* Цвет фона таблицы */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    overflow: hidden; /* Скрываем переполнение */
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%; /* Ширина таблицы 100% */
+    border-collapse: collapse; /* Убираем двойные границы */
+}
+
+/* Стили для заголовков таблицы */
+th {
+    background-color: #ff7e5f; /* Цвет фона заголовка */
+    color: white; /* Цвет текста заголовка */
+    padding: 12px; /* Внутренние отступы */
+    text-align: left; /* Выравнивание текста влево */
+}
+
+/* Стили для ячеек таблицы */
+td {
+    padding: 12px; /* Внутренние отступы */
+    border-bottom: 1px solid #ddd; /* Нижняя граница ячейки */
+}
+
+/* Эффект при наведении на строки таблицы */
+tbody tr:hover {
+    background-color: #139095; /* Цвет фона при наведении */
+}
+
+/* Стили для последней строки таблицы */
+tbody tr:last-child {
+    border-bottom: none; /* Убираем нижнюю границу у последней строки */
+}
+
+/* Стили для ячеек с четным индексом */
+tbody tr:nth-child(even) {
+    background-color: rgba(146, 215, 68, 0.85); /* Цвет фона для четных строк */
+}
+
+.text-container-about {
+    background-color: #4d208c; /* Цвет фона контейнера */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    min-width: 68%;
+    max-width: 800px; /* Максимальная ширина формы */
+    width: 100%; /* Ширина 100% от родителя */
+    margin: auto; /* Центрируем контейнер */
+}
+
+.text-container-about h1 {
+    color: #ff7e5f; /* Цвет заголовка */
+    margin-top: 0; /* Убираем верхний отступ */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.text-container-about p {
+    color: #121111; /* Цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin: 10px 0; /* Вертикальные отступы */
+    font-size: 22px;
+}
+
+.text-container-about p a {
+    color: #ffffff; /* Цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin: 10px 0; /* Вертикальные отступы */
+    font-size: 22px;
+}
+
+/* Стили для контейнера телефона */
+.phone-container {
+    background-color: #ffffff; /* Цвет фона контейнера */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    text-align: center; /* Выравнивание текста по центру */
+    transition: transform 0.3s; /* Плавный переход для анимации */
+}
+
+/* Стили для номера телефона */
+.phone-number {
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #ff7e5f; /* Цвет текста */
+    position: relative; /* Для использования анимации */
+    display: inline-block; /* Инлайн-блочный элемент для анимации */
+    animation: pulse 1.5s infinite; /* Анимация пульсации */
+    text-decoration: none;
+}
+
+/* Анимация пульсации */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Исходное состояние */
+    }
+    50% {
+        transform: scale(1.1); /* Увеличение размера */
+    }
+}
+
+/* Эффект при наведении на контейнер */
+.phone-container:hover {
+    transform: translateY(-5px); /* Подъем контейнера при наведении */
+}
+
+.email-container {
+
+    border-radius: 10px; /* Закругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 4px 20px rgb(18, 17, 17); /* Тень для объема */
+    text-align: center; /* Выравнивание текста по центру */
+
+}
+
+/* Стили для email адреса */
+.email-address {
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #ff7e5f; /* Начальный цвет текста */
+    position: relative; /* Для использования анимации */
+    display: inline-block; /* Инлайн-блочный элемент для анимации */
+    animation: glow 1.5s infinite alternate; /* Анимация свечения */
+    text-decoration: none;
+}
+
+/* Анимация свечения */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff7e5f, 0 0 10px #ff7e5f, 0 0 15px #feb47b, 0 0 20px #feb47b; /* Начальное состояние свечения */
+        color: #ff7e5f; /* Исходный цвет текста */
+    }
+    100% {
+        text-shadow: 0 0 20px #ff7e5f, 0 0 30px #feb47b, 0 0 40px #feb47b, 0 0 50px #feb47b; /* Конечное состояние свечения */
+        color: #feb47b; /* Цвет текста при свете */
+    }
+}
+
+/* Эффект при наведении на контейнер */
+.email-container:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Увеличение тени при наведении */
+}
