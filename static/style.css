@@ -43,25 +43,6 @@ nav {
     justify-content: center;
 }
 
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: row; /* Горизонтальное расположение элементов */
-        justify-content: center; /* Центрирование элементов меню */
-        gap: 30px; /* Промежуток между элементами меню */
-        flex-wrap: wrap; /* Перенос элементов на новую строку */
-    }
-
-    .menu li {
-        flex: 1 1 100%; /* Элементы занимают всю ширину строки */
-        text-align: center; /* Центрирование текста в элементах */
-    }
-
-    .menu a {
-        padding: 15px 30px; /* Увеличение отступов для удобства касания */
-        font-size: 1.6rem; /* Увеличение размера шрифта для удобочитаемости */
-    }
-}
-
 /* Стили для элементов списка */
 .menu li {
     display: inline; /* Отображение как строчные элементы */
@@ -342,7 +323,7 @@ tbody tr:nth-child(even) {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     body {
         font-size: 1.6rem; /* Increase base font size */
     }
@@ -367,7 +348,10 @@ tbody tr:nth-child(even) {
     }
 
     .menu a {
-        font-size: 1.6rem; /* Increase font size for menu links */
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        font-size: 3rem; /* Увеличение размера шрифта для удобочитаемости */
     }
 
     .text-container, .text-container-info, .text-container-about, .phone-container, .email-container {
