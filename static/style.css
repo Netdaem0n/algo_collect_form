@@ -321,6 +321,34 @@ tbody tr:nth-child(even) {
 }
 
 
+.warning {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: none;
+	justify-content: center;
+	width: 100%;
+	padding: 30px;
+	box-sizing: border-box;
+	background-color: rgba(211, 198, 44, 0.45);
+}
+
+.warning--active {
+	display: flex;
+}
+
+.warning__text {
+	margin-right: 30px;
+    font-size: 2rem;
+}
+
+.warning__read {
+	display: block;
+	margin-left: 15px;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
 
 
 @media (max-width: 1000px) {
