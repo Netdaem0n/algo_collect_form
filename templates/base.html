@@ -11,10 +11,11 @@
 <nav>
     <ul class="menu">
     <li><a href="{{ url_for('home_main') }}">Главная</a></li>
-    <li><a href="{{ url_for('add_mk') }}">Записаться на Мастер Класс</a></li>
-    <li><a href="{{ url_for('kontakti') }}">Связаться с нами</a></li>
-    {% if request.cookies.get('UUID') %}<li><a href="{{ url_for('special_page') }}">Просмотреть заявки на Мастер-Класс</a></li>{% endif %}
-    <li><a href="{{ url_for('about') }}">О нас</a></li>
+    <li><a href="{{ url_for('add_mk') }}">Записаться</a></li>
+    <li><a href="{{ url_for('kontakti') }}">Контакты</a></li>
+    {% if request.cookies.get('UUID') %}<li><a href="{{ url_for('special_page') }}">Мои заявки</a></li>{% endif %}
+    {% if request.cookies.get('TGM') %}<li><a href="{{ url_for('admin_page') }}">АДМИН ПАНЕЛЬ</a></li>{% endif %}
+        <li><a href="{{ url_for('about') }}">О нас</a></li>
     </ul>
 </nav>
 

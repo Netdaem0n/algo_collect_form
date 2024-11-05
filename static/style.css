@@ -33,25 +33,32 @@ nav {
 
 /* Стили для списка меню */
 .menu {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     list-style: none; /* Убираем маркеры списка */
     padding: 0; /* Убираем внутренние отступы */
     display: flex; /* Flexbox для горизонтального расположения */
     gap: 30px; /* Промежуток между элементами меню */
     margin-top: 50px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
     .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center the menu items */
-        gap: 30px; /* Reduce the gap between items */
+        flex-direction: row; /* Горизонтальное расположение элементов */
+        justify-content: center; /* Центрирование элементов меню */
+        gap: 30px; /* Промежуток между элементами меню */
+        flex-wrap: wrap; /* Перенос элементов на новую строку */
+    }
+
+    .menu li {
+        flex: 1 1 100%; /* Элементы занимают всю ширину строки */
+        text-align: center; /* Центрирование текста в элементах */
     }
 
     .menu a {
-        padding: 15px 30px; /* Increase padding for better touch targets */
-        font-size: 1.2rem; /* Increase font size for readability */
+        padding: 15px 30px; /* Увеличение отступов для удобства касания */
+        font-size: 1.6rem; /* Увеличение размера шрифта для удобочитаемости */
     }
 }
 
@@ -259,6 +266,7 @@ tbody tr:nth-child(even) {
     max-width: 800px; /* Максимальная ширина формы */
     width: 100%; /* Ширина 100% от родителя */
     margin: auto; /* Центрируем контейнер */
+    color: white;
 }
 
 .text-container-about h1 {
@@ -268,7 +276,7 @@ tbody tr:nth-child(even) {
 }
 
 .text-container-about p {
-    color: #121111; /* Цвет текста */
+    color: white; /* Цвет текста */
     line-height: 1.6; /* Межстрочный интервал */
     margin: 10px 0; /* Вертикальные отступы */
     font-size: 22px;
@@ -279,6 +287,17 @@ tbody tr:nth-child(even) {
     line-height: 1.6; /* Межстрочный интервал */
     margin: 10px 0; /* Вертикальные отступы */
     font-size: 22px;
+    text-decoration: none;
+    animation-delay: 0.5s;
+}
+
+.text-container-about p a:hover {
+    margin: 5px;
+    padding:10px;
+    color: black; /* Цвет текста */
+    background-color: white;
+    border: 2px solid #b877ff;
+    border-radius: 40px;
 }
 
 /* Стили для контейнера телефона */
@@ -302,23 +321,7 @@ tbody tr:nth-child(even) {
     text-decoration: none;
 }
 
-/* Анимация пульсации */
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1); /* Исходное состояние */
-    }
-    50% {
-        transform: scale(1.1); /* Увеличение размера */
-    }
-}
-
-/* Эффект при наведении на контейнер */
-.phone-container:hover {
-    transform: translateY(-5px); /* Подъем контейнера при наведении */
-}
-
 .email-container {
-
     border-radius: 10px; /* Закругленные углы */
     padding: 20px; /* Внутренние отступы */
     box-shadow: 0 4px 20px rgb(18, 17, 17); /* Тень для объема */
@@ -333,23 +336,90 @@ tbody tr:nth-child(even) {
     color: #ff7e5f; /* Начальный цвет текста */
     position: relative; /* Для использования анимации */
     display: inline-block; /* Инлайн-блочный элемент для анимации */
-    animation: glow 1.5s infinite alternate; /* Анимация свечения */
     text-decoration: none;
 }
 
-/* Анимация свечения */
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff7e5f, 0 0 10px #ff7e5f, 0 0 15px #feb47b, 0 0 20px #feb47b; /* Начальное состояние свечения */
-        color: #ff7e5f; /* Исходный цвет текста */
-    }
-    100% {
-        text-shadow: 0 0 20px #ff7e5f, 0 0 30px #feb47b, 0 0 40px #feb47b, 0 0 50px #feb47b; /* Конечное состояние свечения */
-        color: #feb47b; /* Цвет текста при свете */
-    }
-}
 
-/* Эффект при наведении на контейнер */
-.email-container:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Увеличение тени при наведении */
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 1.6rem; /* Increase base font size */
+    }
+
+    .text-container h1 {
+        font-size: 2.2rem; /* Increase font size for h1 */
+    }
+    .text-container h5, h4, h2, h3 {
+        font-size: 1.8rem; /* Increase font size for h1 */
+        word-break: keep-all;
+        text-align: left;
+    }
+    .text-container p {
+        font-size: 1.6rem; /* Increase font size for text containers */
+        text-align: left; /* Align text to the left */
+        word-break: keep-all;
+
+    }
+
+    h1, h2, h3 {
+        font-size: 3.5rem; /* Increase font size for h1 */
+    }
+
+    .menu a {
+        font-size: 1.6rem; /* Increase font size for menu links */
+    }
+
+    .text-container, .text-container-info, .text-container-about, .phone-container, .email-container {
+        font-size: 1.5rem; /* Increase font size for text containers */
+    }
+
+
+    .contact-form input, .contact-form textarea, .contact-form select {
+        font-size: 2rem; /* Increase font size for form elements */
+    }
+
+    .contact-form label {
+        font-size: 2.2rem; /* Increase font size for buttons */
+    }
+
+    .contact-form button {
+        font-size: 2.0rem; /* Increase font size for buttons */
+    }
+
+    .red-note {
+        margin: 4px;
+        padding: 8px;
+        font-size: 1.6rem; /* Increase font size for phone and email */
+        color: white;
+        border: 5px solid black;
+        border-radius: 90px 0px 45px 0px;
+        background-color: red;
+        min-width: 200px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .phone-number, .email-address {
+        font-size: 1.6rem; /* Increase font size for phone and email */
+    }
+
+    .text-container-info h1 {
+        padding-bottom: 5px;
+        font-size: 2.2rem; /* Increase font size for phone and email */
+        text-align: center;
+        word-break: keep-all;
+
+    }
+
+    .text-container-info p {
+        padding-left: 5px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        font-size: 2rem; /* Increase font size for phone and email */
+        text-align: justify;
+        word-break: auto-phrase;
+        color: white;
+    }
+
 }

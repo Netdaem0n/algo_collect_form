@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ p_title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="table-container">
+    <h1>Список заявок</h1>
+
+    <div class="filter-container">
+        <input type="text" id="filter-id" placeholder="Фильтровать по ID">
+        <input type="text" id="filter-uuid" placeholder="Фильтровать по UUID">
+        <input type="text" id="filter-fam_child" placeholder="Фильтровать по Фамилия ребенка">
+        <input type="text" id="filter-name_child" placeholder="Фильтровать по Имя ребенка">
+        <input type="text" id="filter-date_birth" placeholder="Фильтровать по Дата рождения">
+        <!-- Add more filter inputs as needed -->
+    </div>
+
+    <table id="users-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>UUID</th>
+                <th>Фамилия ребенка</th>
+                <th>Имя ребенка</th>
+                <th>Отчество ребенка</th>
+                <th>Дата рождения</th>
+                <th>Имя родителя</th>
+                <th>Телефон родителя</th>
+                <th>Telegram аккаунт</th>
+                <th>Платформа</th>
+                <th>День МК</th>
+                <th>Время МК</th>
+                <th>Название МК</th>
+                <th>Дата создания</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+                <td>{{ user[3] }}</td>
+                <td>{{ user[4] }}</td>
+                <td>{{ user[5] }}</td>
+                <td>{{ user[6] }}</td>
+                <td>{{ user[7] }}</td>
+                <td>{{ user[8] }}</td>
+                <td>{{ user[9] }}</td>
+                <td>{{ user[10] }}</td>
+                <td>{{ user[11] }}</td>
+                <td>{{ user[12] }}</td>
+                <td>{{ user[13] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterId = document.getElementById('filter-id');
+        const filterUuid = document.getElementById('filter-uuid');
+        const filterFamChild = document.getElementById('filter-fam_child');
+        const filterNameChild = document.getElementById('filter-name_child');
+        const filterDateBirth = document.getElementById('filter-date_birth');
+        // Add more filter elements as needed
+
+        const table = document.getElementById('users-table');
+        const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        function filterTable() {
+            const idValue = filterId.value.toLowerCase();
+            const uuidValue = filterUuid.value.toLowerCase();
+            const famChildValue = filterFamChild.value.toLowerCase();
+            const nameChildValue = filterNameChild.value.toLowerCase();
+            const dateBirthValue = filterDateBirth.value.toLowerCase();
+            // Add more filter values as needed
+
+            for (let row of rows) {
+                const idText = row.cells[0].textContent.toLowerCase();
+                const uuidText = row.cells[1].textContent.toLowerCase();
+                const famChildText = row.cells[2].textContent.toLowerCase();
+                const nameChildText = row.cells[3].textContent.toLowerCase();
+                const dateBirthText = row.cells[5].textContent.toLowerCase();
+                // Add more cell text content as needed
+
+                const idMatch = idText.includes(idValue);
+                const uuidMatch = uuidText.includes(uuidValue);
+                const famChildMatch = famChildText.includes(famChildValue);
+                const nameChildMatch = nameChildText.includes(nameChildValue);
+                const dateBirthMatch = dateBirthText.includes(dateBirthValue);
+                // Add more match conditions as needed
+
+                if (idMatch && uuidMatch && famChildMatch && nameChildMatch && dateBirthMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        }
+
+        filterId.addEventListener('input', filterTable);
+        filterUuid.addEventListener('input', filterTable);
+        filterFamChild.addEventListener('input', filterTable);
+        filterNameChild.addEventListener('input', filterTable);
+        filterDateBirth.addEventListener('input', filterTable);
+        // Add more event listeners as needed
+    });
+</script>
+{% endblock %}
