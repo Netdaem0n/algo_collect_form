@@ -1,4 +1,4 @@
 .venv
 .idea
 __pycache__
-dbfolder/database1.db
+dbfolder/database.db
