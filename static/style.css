@@ -65,17 +65,16 @@ nav {
 }
 
 .text-container {
-    border: 5px solid burlywood;
-    border-radius: 50px 20px 50px 20px;
+
     margin-top: 20px; /* Отступ сверху для отделения текста от меню */
     font-size: 24px;
     text-align: center;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     min-width: 600px; /* Set minimum width */
-    max-width: 80%;
+    max-width: 90%;
     margin-left: auto; /* Center the container horizontally */
     margin-right: auto; /* Center the container horizontally */
     word-wrap: break-word; /* Allow long words to be broken and wrap to the next line */
@@ -90,8 +89,7 @@ nav {
 
 .text-container-info {
     font-size: 24px;
-    border: 5px solid burlywood;
-    border-radius: 50px 20px 50px 20px;
+
     margin-top: 20px; /* Отступ сверху для отделения текста от меню */
     text-align: center;
     display: block;
@@ -434,4 +432,90 @@ tbody tr:nth-child(even) {
         color: white;
     }
 
+}
+
+.content-block {
+    background-color: white; /* Цвет фона блока */
+    color: black;
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    max-width: 600px; /* Максимальная ширина блока */
+    width: 100%; /* Ширина 100% для адаптивности */
+    margin: 20px; /* Отступы */
+    display: flex;
+    flex-direction: column; /* Вертикальная компоновка */
+    align-items: center; /* Центрирование содержимого */
+    padding: 20px; /* Внутренние отступы */
+}
+
+.content-image {
+    width: 100%; /* Ширина изображения 100% для адаптивности */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 8px; /* Скругление углов изображения */
+}
+
+.content-title {
+    margin: 15px 0; /* Отступы сверху и снизу */
+    font-size: 1.5rem; /* Размер шрифта заголовка */
+}
+
+.content-text {
+    text-align: center; /* Центрирование текста */
+    font-size: 1rem; /* Размер шрифта текста */
+    line-height: 1.5; /* Межстрочный интервал */
+    color: #333; /* Цвет текста */
+}
+
+.content-block-header {
+    background-color: #441a78; /* Цвет фона блока */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    padding: 20px; /* Внутренние отступы */
+}
+
+.content-title {
+    font-size: 2rem; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.typing-animation {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem; /* Increase font size */
+    font-style: italic; /* Italicize the font */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    border-right: 0.4em solid orange; /* Thicker cursor */
+    animation: blink-caret 1s step-end infinite;
+    height: 1.5rem; /* Shorter height */
+    display: inline-block; /* Ensure the block size does not change */
+    vertical-align: bottom; /* Align the text and cursor */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    30% { border-color: #121111; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .typing-animation {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        height: 1.5rem; /* Adjust height for smaller screens */
+    }
+}
+
+.signup-link {
+    display: inline-block; /* Отображение как блочный элемент */
+    padding: 15px 30px; /* Внутренние отступы */
+    background-color: #28a745; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Закругление углов */
+    font-size: 1.2rem; /* Размер шрифта */
+    transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
+}
+
+.signup-link:hover {
+    background-color: #218838; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
 }

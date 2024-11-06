@@ -6,16 +6,72 @@
 
 {% block content %}
 
-    <div class="text-container">
-        <h1>Алгоритмика </h1>
-        <h2>Южно-Сахалинск</h2>
-        <h4>Приглашаем Вас записаться на Мастер Классы:</h4>
-        <p>Программирование</p>
-        <p>Майнкрафт</p>
-        <p>Компьютерная грамотность</p>
-        <p>Визуальное программирование</p>
-        <p>Основы Логики</p>
-        <p>(подготовительная группа к школе)</p>
+    <div class="content-block-header">
+        <h1 class="content-title">Алгоритмика Сахалин</h1>
+        <div class="typing-animation" id="typingAnimation"></div>
     </div>
 
+    <div class="text-container">
+
+            <div class="content-block">
+        <img src="static/img/2330685.png" alt="Программирование" class="content-image">
+        <h2 class="content-title">Программирование (Python)</h2>
+        <p class="content-text">
+            Учимся кодить на Python — одном из самых популярных языков программирования в мире. И сразу применяем знания на практике, создавая программы для учебы, развлечений и жизни
+            В основе курса — сюжет о работе в реальной IT-компании. С онбордингом, командными брейнштормами, хакатонами.
+            Разрабатываем программы для автоматизации вычислений, тактические шутеры и приложения для обработки фото, с каждым проектом переходя на новый уровень.
+        </p>
+                <a href="/add_mk" class="signup-link">Записаться</a>
+            </div>
+
+            <div class="content-block">
+        <img src="static/img/m_p.jpg" alt="Майнкрафт" class="content-image">
+        <h2 class="content-title">Python+Майнкрафт</h2>
+        <p class="content-text">
+            Добро пожаловать в увлекательное и образовательное путешествие в мир программирования с использованием языка Python и игры Minecraft.
+            Программирование в Minecraft на Python — это способ научить ребенка написанию кода в любимой игре с помощью специальных программ-модификаций.
+            В рамках этого курса ребенок не только попробует себя в профессии, но и разовьет креативное, критическое и системное мышление.
+        </p>
+                <a href="/add_mk" class="signup-link">Записаться</a>
+            </div>
+
+            <div class="content-block">
+        <img src="static/img/2fbdfdf.png" alt="Основы фронтенд-разработки" class="content-image">
+        <h2 class="content-title"> Основы фронтенд-разработки</h2>
+        <p class="content-text">
+            Люди и компании используют умные устройства и приложения каждый день, а интерфейс для них создает фронтенд-разработчик. Мы научим вашего ребенка создавать приложения и покажем как можно развиваться в этой профессии.
+        </p>
+                <a href="/add_mk" class="signup-link">Записаться</a>
+            </div>
+
+            <div class="content-block">
+        <img src="static/img/15582e5.png" alt="Компьютерная грамотность" class="content-image">
+        <h2 class="content-title">Компьютерная грамотность</h2>
+        <p class="content-text">
+
+            Изучаем новые цифровые инструменты вместе с командой из пяти персонажей-мультяшек. Так знакомство с компьютером становится похожим на просмотр мультфильма, где каждая серия — это урок со своим сюжетом.
+        </p>
+                <a href="/add_mk" class="signup-link">Записаться</a>
+            </div>
+
+            <div class="content-block">
+        <img src="static/img/f15e07e.png" alt="Визуальное программирование" class="content-image">
+        <h2 class="content-title">Визуальное программирование</h2>
+        <p class="content-text">
+            Учимся основам программирования на детском языке Scratch и создаем творческие проекты — от простой анимации до настоящих игр и мультфильмов
+        </p>
+                <a href="/add_mk" class="signup-link">Записаться</a>
+            </div>
+
+            <div class="content-block">
+        <img src="static/img/db9c6e8.png" alt="Основы Логики" class="content-image">
+        <h2 class="content-title">Основы Логики</h2>
+        <p class="content-text">
+            Путешествуем по сказочному digital-королевству, проходим через препятствия и спасаем принцессу в приложении «Рыцарь кода». А по пути изучаем новые термины и составляем первые алгоритмы!
+        </p>
+                <a href="/add_mk" class="signup-link">Записаться</a>
+            </div>
+
+    </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 {% endblock %}
