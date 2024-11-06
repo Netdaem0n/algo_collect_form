@@ -459,11 +459,17 @@ tbody tr:nth-child(even) {
     font-size: 1.5rem; /* Размер шрифта заголовка */
 }
 
+.content-title-age {
+    margin: 10px 0; /* Отступы сверху и снизу */
+    font-size: 1.2rem; /* Размер шрифта заголовка */
+}
+
 .content-text {
-    text-align: center; /* Центрирование текста */
+    text-align: justify; /* Центрирование текста */
     font-size: 1rem; /* Размер шрифта текста */
     line-height: 1.5; /* Межстрочный интервал */
     color: #333; /* Цвет текста */
+    word-break: keep-all; /* Не разбивать слова пополам */
 }
 
 .content-block-header {
@@ -471,11 +477,6 @@ tbody tr:nth-child(even) {
     border-radius: 8px; /* Скругление углов */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
     padding: 20px; /* Внутренние отступы */
-}
-
-.content-title {
-    font-size: 2rem; /* Размер шрифта заголовка */
-    margin-bottom: 10px; /* Отступ снизу */
 }
 
 .typing-animation {
